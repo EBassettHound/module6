@@ -31,7 +31,7 @@ function getMostPopularAuthors(booksArr, authorsArr) {
     authorsArr.forEach(authObj=>{if (authObj.id === Number(key)) countArr.push({name: `${authObj.name.first} ${authObj.name.last}`, count: popularAuth[key]});})
   }
   
-  return countArr.sort((authA,authB)=> authB.count > authA.count ? 1 : -1).slice(0,5);
+  return countArr.sort((authA,authB)=> authB.count > authA.count ? 1 : -1).slice(0,5).map((authObj)=>authObj);
 }
 
 module.exports = {
